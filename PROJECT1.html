@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Boost Pricing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;           
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 8px 32px rgb(255, 35, 35);
+        }
+        .cc{
+            margin: 20px auto;
+            padding: 10px; 
+
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        .pricing-plan {
+            
+            margin:  15px;
+            padding: 15px;
+            background-color: #d3fcff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(159, 159, 159, 0.731);
+            text-align: center;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .pricing-plan:hover {
+            box-shadow: 0 8px 20655px rgba(159, 159, 159, 0.731);
+        }
+        .pricing-plan h3 {
+            color: #007bff;
+        }
+        .pricing-plan p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .pricing-plan a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .pricing-plan a:hover {
+            background-color: #0056b3;
+        }
+        .contact-us {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .contact-us a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        @media screen and (max-width: 768px) {
+      .plan {
+        flex-basis: 100%;
+      }
+    }
+    </style>
+    <script>
+        const currencySymbols = {
+            'USD': '$',
+            'EUR': '€',
+            'GBP': '£',
+            'INR': '₹'
+        };
+
+        function pay() {
+            alert("Payment successful! You're now subscribed.");   
+        }
+
+        function convertCurrency(currencyRate, currencyCode) {
+            var prices = document.getElementsByClassName('price');
+            var currencySymbol = currencySymbols[currencyCode];
+            for (var i = 0; i < prices.length; i++) {
+                var price = parseFloat(prices[i].dataset.price);
+                prices[i].textContent = currencySymbol + (price * currencyRate).toFixed(2);
+            }
+        }
+    </script>
+</head>
+<header style="color: #ffd500; text-align: left; font-size: xx-large;">
+    <p><strong>𝕮𝕭</strong></p>
+</header>
+<br><br>
+<body>
+    <h1 style="color: #fff; font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        Unleash the Power of the Cloud: Turbocharge Your Business
+    </h1>
+    <div class="container">
+        <h1>Cloud Boost Pricing</h1>
+        <p>Choose the Plan That Fits Your Needs</p>
+        <div>
+            <input type="radio" id="usd" name="currency" onclick="convertCurrency(1, 'USD')">
+            <label for="usd">USD</label>
+
+            <input type="radio" id="eur" name="currency" onclick="convertCurrency(0.89, 'EUR')">
+            <label for="eur">EUR</label>
+
+            <input type="radio" id="gbp" name="currency" onclick="convertCurrency(0.76, 'GBP')">
+            <label for="gbp">GBP</label>
+            <input type="radio" id="inr" name="currency" onclick="convertCurrency(74.39, 'INR')">
+            <label for="inr">INR</label>
+        </div>
+        <br>
+        <div class="cc">
+            <div class="pricing-plan">
+                <h3>Basic</h3>
+                <p><strong>Price:</strong><span class="price" data-price="10">$10 USD</span></p>
+                <p><strong>Storage:</strong> 10GB</p>
+                <p><strong>Users:</strong> Up to 5</p>
+                <p><strong>Support:</strong> Email</p>
+                <p><strong>Features:</strong></p>
+                <p>Basic Features Included</p>
+                <p>Limited File Sharing</p>
+                <p>Basic Security Measures</p>
+                <br>
+                <button onclick="pay()">GET STARTED</button><br>
+            </div>
+            <div class="pricing-plan">
+                <h3>Standard</h3>
+                <p><strong>Price:</strong><span class="price" data-price="20">$20 USD</span></p>
+                <p><strong>Storage:</strong> 50GB</p>
+                <p><strong>Users:</strong> Up to 15</p>
+                <p><strong>Support:</strong> Email & Chat</p>
+                <p><strong>Features:</strong></p>
+                <p>Advanced Features Included</p>
+                <p>Enhanced File Sharing</p>
+                <p>Advanced Security Measures</p>
+                <br>
+                <button onclick="pay()">GET STARTED </button><br>
+            </div>
+            <div class="pricing-plan">
+                <h3>Premium</h3>
+                <p><strong>Price:</strong><span class="price" data-price="30">$30 USD</span></p>
+                <p><strong>Storage:</strong> 100GB</p>
+                <p><strong>Users:</strong> Unlimited</p>
+                <p><strong>Support:</strong>Email, Chat & Phone</p>
+                <p><strong>Features:</strong></p>
+                <p>Unlimited File Sharing</p>
+                <p>Premium Security Measures</p>
+                <p>Customizable Branding</p><br>
+                <button onclick="pay()">GET STARTED</button>
+                <br>
+            </div>
+        </div>
+        <div class="contact-us">
+            <p>Need a custom plan? <a href="#">Contact Us</a></p>
+        </div>
+        <p style="text-align: center;">30-day money-back guarantee on all plans.</p>
+    </div>
+</body>
+</html>
