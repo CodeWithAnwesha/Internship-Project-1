@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #3b3737;
+      background-image: url('https://cdn.pixabay.com/photo/2017/10/31/19/05/web-design-2906159_1280.jpg');
+      background-size: cover;
+      perspective: 1000px;
+    }
+
+    .container {
+      width: 350px;
+      padding: 20px;
+      background-color: #e6af48;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(2, 71, 93, 0.1);
+      text-align: center;
+      transform-style: preserve-3d;
+      animation: flip 3s forwards;
+    }
+
+    @keyframes flip {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .container h1, .container p, .container h2, .form-group, .error-message {
+      backface-visibility: hidden;
+    }
+
+    .container h2 {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-group input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+        <div class="container">
+            <h1>Welcome to WebPro!</h1>
+            <p>Explore your skills with variety of Web Design Projects...</p>
+            <br>
+            <h2>Register</h2>
+            <form id="registration-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Submit" id="submit-button">
+              </div>
+              
+            </form>
+            <div id="error-messages" class="error-message"></div>
+        </div>
+    
+
+  <script>
+    const form = document.getElementById('registration-form');
+    const errorMessages = document.getElementById('error-messages');
+
+    form.addEventListener('submit', function(event) {
+      errorMessages.innerHTML = '';
+      const username = form.elements['username'].value.trim();
+      const email = form.elements['email'].value.trim();
+      const password = form.elements['password'].value.trim();
+
+      if (username.length < 4) {
+        displayErrorMessage('Username must be at least 4 characters long.');
+        event.preventDefault();
+      }
+
+      if (!validateEmail(email)) {
+        displayErrorMessage('Invalid email address.');
+        event.preventDefault();
+      }
+
+      if (password.length < 6) {
+        displayErrorMessage('Password must be at least 6 characters long.');
+        event.preventDefault();
+      }
+    });
+    document.getElementById('submit-button').addEventListener('click', function(event) {
+      event.preventDefault();
+      window.location.href = 'myproject.html';
+    });
+
+
+    function displayErrorMessage(message) {
+      const errorMessageElement = document.createElement('div');
+      errorMessageElement.textContent = message;
+      errorMessages.appendChild(errorMessageElement);
+    }
+
+    function validateEmail(email) {
+      const re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    }
+  </script>
+</body>
+</html>
