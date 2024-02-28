@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petify Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #835bea;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 25px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product {
+  /* flex: 1; */
+  width: 48%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.product h2 {
+  margin-top: 10px;
+}
+
+.product p {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.product .price {
+  font-weight: bold;
+  color: #333;
+  font-size: 20px;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.cta button:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+  .product {
+    width: 100%;
+  }
+}
+footer {
+            background-color: #835bea;
+            color: #fffdfd;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+</style>
+<body>
+  <header>
+    <h1>Petify</h1>
+    <hr>
+    <br>
+    <nav>
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#Products">Products</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="Home">
+      <br>
+      <br>
+      <br>
+      <img src="https://th.bing.com/th/id/R.19e000d053b70700bf7b8effcc325bb2?rik=yA8NIG6KaUvBeg&riu=http%3a%2f%2finspirationseek.com%2fwp-content%2fuploads%2f2016%2f02%2fCute-Dog-Photography.jpg&ehk=zHTEN7wVeaoa90jx%2fnAeUV8qovqwk2PbzHSW64l4xPA%3d&risl=&pid=ImgRaw&r=0" style="width: 350px; float: right; display: block; margin: 20px;">
+      <p style="text-align: left;">
+        <h2>Welcome to Petify!</h2>
+      </p>
+      <br>
+      <p>At Petify, we recognize that pets are more than just creatures—they are cherished members of the household. This is why we carefully select each toy, keeping your pet's joy and overall wellness as our top priority. Our collection includes a variety of products, from engaging puzzles to cuddly companions, catering to every pet's unique personality and play preferences. At Petify, we have a team of individuals who share a love for pets and are committed to delivering personalized service and expert guidance. Whether you are in search of a playful puppy, an inquisitive kitten, or an older pet, we are here to assist you in finding the perfect toy that will keep their tails wagging and their spirits high.
+
+Being pet owners ourselves, we understand the significance of safety and longevity. Hence, we give utmost importance to products made from materials that are safe for pets and adhere to strict quality standards. Your pet's safety is our utmost concern, which is why you can shop with confidence, knowing that each toy has undergone thorough evaluation for durability and enjoyment.Thank you for choosing Petify--where Happiness is a wag away!
+      </p>
+      </section>
+      <br><br><br><br>
+    <section id="Products">
+      <h1>CHECK OUR PRODUCTS</h1>
+      <br>
+    <div class="product-container">
+      <div class="product">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/81xE5osOAgL._AC_SL1500_.jpg" alt="Rope Chew Toy">
+        <h2>Rope Chew Toy</h2>
+        <p>Our Rope Chew Toy is a reliable and fun toy for your pet, ideal for playtime activities. Made from premium, pet-friendly materials, this toy is created to cater to your dog's chewing instincts, support dental hygiene, and offer endless amusement. Crafted with durable, vibrant cotton fibers twisted into a strong knot, our Rope Chew Toy is engineered to endure the vigorous chewing of your furry friend. The textured design aids in gum stimulation and teeth cleaning, encouraging good oral health and minimizing plaque and tartar accumulation.</p>
+        <p class="price">₹200</p>
+        <div class="cta">
+          <button>Add to Cart</button>
+          <button>Learn More</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://www.rover.com/blog/wp-content/uploads/2019/03/toy-birdwand.jpg" alt="Cat Catch Toy">
+        <h2>Cat Catch Toy</h2>
+        <p>Introducing our Cat Catch Toy, the ideal solution for providing endless hours of entertainment and amusement for your beloved feline companion! Engineered to stimulate your cat's innate hunting instincts, this interactive toy guarantees to keep your kitty engaged and energized throughout the day. Meticulously crafted using top-quality materials and meticulous design, our Cat Catch Toy showcases an enchanting feather teaser securely fastened to a flexible wand. The vibrant feathers flawlessly imitate the mesmerizing movements of prey, irresistibly tempting your cat to leap, prowl, and pursue with sheer delight.</p>
+        <p class="price">₹199</p>
+        <div class="cta">
+          <button>Add to Cart</button>
+          <button>Learn More</button>
+        </div>
+      </div>
+        <div class="product">
+            <img src="https://imgix.bustle.com/uploads/image/2018/5/18/192aad01-dbe8-490a-97c7-4908943b313b-bestcattoys.png?w=800&fit=crop&crop=faces&auto=format%2Ccompress&q=50&dpr=2" alt="Ball Puzzle Toy">
+            <h2>Ball Puzzle Toy</h2>
+            <p>Presenting our Ball Puzzle Toy, a cutting-edge interactive toy created to stimulate your cat's curiosity and intelligence! This unique toy merges playfulness with problem-solving, offering endless fun and mental exercise for your feline companion. Made from sturdy and pet-friendly materials, our Ball Puzzle Toy boasts a robust base with various openings and compartments, each containing a vibrant ball. When your cat swats and pushes the balls, they move unpredictably, captivating your cat's interest and promoting exploration. The erratic motion of the balls awakens your cat's innate hunting instincts, engaging their senses and providing hours of entertainment. Observe as your cat devises strategies and solves puzzles, relishing the challenge of catching the elusive balls as they zip and bounce around the toy.</p>
+            <p class="price">₹199</p>
+            <div class="cta">
+              <button>Add to Cart</button>
+              <button>Learn More</button>
+            </div>
+          </div>     
+          <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.7vzFtkcLWCgJMcr92ZO4FwHaHa?rs=1&pid=ImgDetMain" alt="Dog Soft Toy">
+            <h2>Dog Soft Toy</h2>
+            <p>Introducing our adorable Dog Soft Toy, the ultimate companion for your furry best friend! This plush toy is meticulously crafted with love and attention to detail, ensuring a cuddly and comforting experience for your beloved pup. Created using high-quality, pet-safe materials, our Dog Soft Toy boasts a luxuriously soft exterior that is gentle on your dog's teeth and gums. It is perfect for both snuggling and gentle play, providing endless hours of joy and companionship. The captivating design and vibrant colors are guaranteed to capture your dog's attention and ignite their imagination. Whether your dog enjoys fetching, carrying, or simply curling up for a nap, our Dog Soft Toy is up to the challenge. Its lightweight yet durable construction allows for easy carrying and snuggling, while its squishy texture makes it ideal for gentle chewing and mouthing.</p>
+            <p class="price">₹249</p>
+            <div class="cta">
+              <button>Add to Cart</button>
+              <button>Learn More</button>
+            </div>
+          </div>   
+          <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.YkcNTFqUk6IrmGzE6fMGBQHaH5?rs=1&pid=ImgDetMain" alt="Bird Swing">
+            <h2>Bird Swing</h2>
+            <p>Introducing our Bird Swing Toy, a delightful perch for your feathered companion to swing, sway, and experience pure joy! Meticulously crafted and thoughtfully designed for maximum amusement, this swing toy is bound to become a cherished addition to your bird's cage, offering endless entertainment and exercise opportunities. Made from durable and bird-friendly materials, our Bird Swing Toy showcases a comfortable perch suspended from robust chains or ropes, enabling your bird to effortlessly rock back and forth. The gentle motion of the swing emulates the soothing sway of tree branches, instilling a sense of security and liberation in your bird. Whether your avian friend enjoys swinging, perching, or simply unwinding, our Bird Swing Toy provides the ideal haven for them to stretch their wings and relax. Its versatile design ensures effortless installation in any birdcage, granting your feathered friend a cozy sanctuary to call their own.</p>
+            <p class="price">₹149</p>
+            <div class="cta">
+              <button>Add to Cart</button>
+              <button>Learn More</button>
+            </div>
+          </div>   
+          <div class="product">
+            <img src="https://i.pinimg.com/originals/4d/43/14/4d43140383ac549e5122e9d579ac2ef0.jpg" alt="Bird Play Station">
+            <h2>Bird Play Station</h2>
+            <p>Presenting our Bird Play Center, the premier playground for your avian companion to discover, work out, and indulge their natural instincts! Meticulously crafted with innovation and tailored for maximum enjoyment, this interactive play center is bound to be the highlight of your bird's day, delivering limitless entertainment and enrichment. Our Bird Play Center showcases an array of engaging features intended to captivate your bird's focus and encourage active play. From vibrant perches and ladders to interactive toys and foraging opportunities, every aspect of this play center is carefully designed to ensure your bird remains entertained and engaged. Whether your bird is an inquisitive cockatiel, a lively parrot, or a magnificent macaw, our Bird Play Center provides the ideal blend of amusement and enrichment to keep them occupied for hours on end. Indulge your feathered friend in the ultimate playtime experience with our Bird Play Center and witness as they stretch their wings and soar with delight!</p>
+            <p class="price">₹599</p>
+            <div class="cta">
+              <button>Add to Cart</button>
+              <button>Learn More</button>
+            </div>
+          </div>   
+          <div class="product">
+            <img src="https://img.chewy.com/is/image/catalog/136879_PT1._AC_SL1500_V1545250349_.jpg" alt="Red Ball">
+            <h2>Red Ball</h2>
+            <p>Presenting our Red Medium Ball for Dogs, a fantastic combination of toughness, rebound, and enjoyment for your four-legged companion's playtime escapades! Constructed with premium materials and tailored with your dog's joy in consideration, this lively ball is bound to be a beloved addition to your pup's toy assortment. Manufactured from sturdy, safe rubber, our Red Medium Ball is engineered to endure roughhousing and vigorous chewing, rendering it suitable for canines of all shapes and breeds. Its moderate size delivers an optimal equilibrium between bounce and steadiness, ensuring prolonged periods of captivating amusement for your furry friend. The vivid red hue of the ball is highly conspicuous, facilitating easy tracking for both you and your dog during fetch sessions in the park or garden. Its sleek exterior and gratifying rebound make it ideal for interactive play, motivating your dog to sprint, pursue, and retrieve with limitless zeal.</p>
+            <p class="price">₹139</p>
+            <div class="cta">
+              <button>Add to Cart</button>
+              <button>Learn More</button>
+            </div>
+          </div>   
+          <div class="product">
+            <img src="https://img.buzzfeed.com/buzzfeed-static/static/2021-05/6/14/asset/94036a0af5b2/sub-buzz-9814-1620311649-30.jpg?resize=990:990" alt="Cat Scratch Toy">
+            <h2>Cat Scratch Toy</h2>
+            <p>Introducing our Cat Scratch Toy, a revolutionary solution to fulfill your feline companion's innate scratching instincts while safeguarding your furniture from any damage! Meticulously crafted using top-notch materials and engineered for exceptional durability, this groundbreaking scratch toy is bound to become a cherished addition to your cat's playtime routine. Our Cat Scratch Toy boasts a robust base and a textured scratching surface, offering your cat an ideal avenue for scratching and stretching. Constructed from premium sisal rope or corrugated cardboard, the scratching surface irresistibly entices your cat's claws, promoting healthy scratching habits and aiding in maintaining their nails in optimal condition.</p>
+            <p class="price">₹399</p>
+            <div class="cta">
+              <button>Add to Cart</button>
+              <button>Learn More</button>
+            </div>
+          </div>   
+          <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.dcERhbyhNLLuj7qHoaeCJAHaHa?rs=1&pid=ImgDetMain" alt="Spiral Bird Swing">
+            <h2>Spiral Bird Swing</h2>
+            <p>Introducing our Spiral Bird Swing, a delightful perch for your avian companion to unwind, engage, and sway with joy! Meticulously crafted and engineered for optimal comfort, this innovative swing is bound to be a beloved addition to your bird's habitat, delivering endless amusement and tranquility. The Spiral Bird Swing boasts a distinctive spiral configuration, offering various perching choices for your bird to select from. Constructed from sturdy and bird-friendly materials, the swing provides a cozy and safe space for your bird to perch, groom, and survey their environment. The gentle rocking movement of the swing emulates the natural sway of tree branches, imparting a sense of security and liberation to your bird. Witness your feathered friend alight on the swing, stretching their wings and relishing the calming sensation of floating mid-air.</p>
+            <p class="price">₹149</p>
+            <div class="cta">
+              <button>Add to Cart</button>
+              <button>Learn More</button>
+            </div>
+          </div>
+    </div>
+  </section>
+  </main>
+  <section id="Contact" style="background-color: #835bea; color: #000000; padding: 20px;">
+    <br>
+    <br>
+    <br>
+    <h1 style="text-align: center;">Connect with Us</h1>
+    <p style="text-align: center;">Get in touch with us through the following details.</p>
+    <div style="text-align: center;">
+      <p class="alt-text">Contact information: petify@gmail.com| +91 565 994 335</p>
+      <br><br><br><br>
+      <br>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2024 Petify | Designed by Anwesha Chakraborty</p>
+  </footer>
+</body>
+</html>
