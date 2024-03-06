@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+  }
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  form {
+    display: flex;
+    align-items: center;
+  }
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+  }
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  li.completed {
+    background-color: #d4edda;
+    color: #155724;
+    text-decoration: line-through;
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+  button.edit-btn,
+  button.delete-btn,
+  button.complete-btn {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button.edit-btn {
+    background-color: #ffc107;
+    color: #212529;
+  }
+  button.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  button.complete-btn {
+    background-color: #28a745;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>To-Do List</h1>
+  <form id="taskForm">
+    <input type="text" id="taskInput" placeholder="Add New Task" required>
+    <button type="submit">Add</button>
+  </form>
+  <ul id="taskList"></ul>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const taskForm = document.getElementById('taskForm');
+  const taskInput = document.getElementById('taskInput');
+  const taskList = document.getElementById('taskList');
+  
+  // Function to retrieve tasks from local storage
+  function getTasks() {
+    let tasks = [];
+    if (localStorage.getItem('tasks')) {
+      tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+    return tasks;
+  }
+
+  // Function to save tasks to local storage
+  function saveTasks(tasks) {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+
+  // Function to display tasks
+  function displayTasks() {
+    const tasks = getTasks();
+    taskList.innerHTML = '';
+    tasks.forEach((task, index) => {
+      const li = document.createElement('li');
+      li.textContent = task.text;
+      li.className = task.completed ? 'completed' : '';
+      const buttons = document.createElement('div');
+      buttons.className = 'buttons';
+      const editButton = document.createElement('button');
+      editButton.className = 'edit-btn';
+      editButton.textContent = 'Edit';
+      editButton.addEventListener('click', () => editTask(index));
+      const deleteButton = document.createElement('button');
+      deleteButton.className = 'delete-btn';
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', () => deleteTask(index));
+      const completeButton = document.createElement('button');
+      completeButton.className = 'complete-btn';
+      completeButton.textContent = task.completed ? 'Undo' : 'Complete';
+      completeButton.addEventListener('click', () => toggleComplete(index));
+      buttons.appendChild(editButton);
+      buttons.appendChild(deleteButton);
+      buttons.appendChild(completeButton);
+      li.appendChild(buttons);
+      taskList.appendChild(li);
+    });
+  }
+
+  // Function to add a new task
+  function addTask(text) {
+    const tasks = getTasks();
+    tasks.push({ text, completed: false });
+    saveTasks(tasks);
+    displayTasks();
+  }
+
+  // Function to edit a task
+  function editTask(index) {
+    const tasks = getTasks();
+    const newText = prompt('Enter new task', tasks[index].text);
+    if (newText !== null) {
+      tasks[index].text = newText;
+      saveTasks(tasks);
+      displayTasks();
+    }
+  }
+
+  // Function to delete a task
+  function deleteTask(index) {
+    const tasks = getTasks();
+    tasks.splice(index, 1);
+    saveTasks(tasks);
+    displayTasks();
+  }
+
+  // Function to toggle completion of a task
+  function toggleComplete(index) {
+    const tasks = getTasks();
+    tasks[index].completed = !tasks[index].completed;
+    saveTasks(tasks);
+    displayTasks();
+  }
+
+  // Event listener for form submission
+  taskForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const taskText = taskInput.value.trim();
+    if (taskText !== '') {
+      addTask(taskText);
+      taskInput.value = '';
+    }
+  });
+
+  // Initial display of tasks
+  displayTasks();
+});
+</script>
+
+</body>
+</html>
